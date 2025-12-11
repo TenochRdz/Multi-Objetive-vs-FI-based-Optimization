@@ -2,6 +2,8 @@ clear all
 close all
 clc
 
+%% Restricicones temporales 
+
 rst=[-1.1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
      0.9 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
      0 -1.1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -43,7 +45,6 @@ rst=[-1.1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 %% Opciones
 % optimset nos permite configurar opciones de la optimización
 options = optimset;
-....
 options = optimset(options,'Display', 'iter');     % Activa que se muestre en la pantalla de comandos las iteraciones
 options = optimset(options,'MaxFunEvals', 90000);   % Pone un límite en la cantidad de veces que se evalua (corre) la función. 
                                                    % Cada iteración requiere evaluar varias veces la función
@@ -55,7 +56,7 @@ options = optimset(options,'TolX', 1e-30);         % Similar al previo, pero con
 options = optimset(options,'Diagnostics', 'on');   % Activa una diagnóstico del problema para fines informativos
 
 
-%% fmincon se utliza para optimizar. Tú usa el siguiente comando:
+%% fmincon se utliza para optimizar
 
 rsb(1,(1:36))=0;
 
